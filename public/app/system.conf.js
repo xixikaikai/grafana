@@ -31,7 +31,8 @@ System.config({
     "jquery.flot.crosshair": "vendor/flot/jquery.flot.crosshair",
     "jquery.flot.fillbelow": "vendor/flot/jquery.flot.fillbelow",
     "jquery.flot.gauge": "vendor/flot/jquery.flot.gauge",
-    "d3": "vendor/d3/d3.js"
+    "d3": "vendor/d3/d3.js",
+    "monaco-editor/": "vendor/npm/monaco-editor/dev/vs/"
   },
 
   packages: {
@@ -55,6 +56,10 @@ System.config({
   },
 
   meta: {
+    'vendor/npm/monaco-editor/dev/vs/loader.js': {
+      format: 'global',
+      exports: 'AMDLoader',
+    },
     'vendor/npm/virtual-scroll/src/indx.js': {
       format: 'cjs',
       exports: 'VirtualScroll',

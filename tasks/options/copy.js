@@ -34,6 +34,7 @@ module.exports = function(config) {
         'remarkable/dist/*',
         'virtual-scroll/**/*',
         'mousetrap/**/*',
+        'monaco-editor/**/*',
       ],
       dest: '<%= srcDir %>/vendor/npm'
     }
