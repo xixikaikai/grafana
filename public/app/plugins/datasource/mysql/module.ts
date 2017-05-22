@@ -9,10 +9,15 @@ class MysqlConfigCtrl {
   static templateUrl = 'partials/config.html';
 }
 
+class MysqlAnnotationsQueryCtrl {
+  static templateUrl = 'partials/annotations.editor.html';
+}
+
 export {
   MysqlDatasource,
   MysqlDatasource as Datasource,
   MysqlQueryCtrl as QueryCtrl,
   MysqlConfigCtrl as ConfigCtrl,
+  MysqlAnnotationsQueryCtrl as AnnotationsQueryCtrl,
 };
 
