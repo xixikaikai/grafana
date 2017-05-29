@@ -21,7 +21,7 @@ func NewTestDataExecutor(dsInfo *models.DataSource) (tsdb.Executor, error) {
 }
 
 func init() {
-	tsdb.RegisterExecutor("grafana-testdata-datasource", NewTestDataExecutor)
+	tsdb.RegisterExecutor("testdata-ds", NewTestDataExecutor)
 }
 
 func (e *TestDataExecutor) Execute(ctx context.Context, queries tsdb.QuerySlice, context *tsdb.QueryContext) *tsdb.BatchResult {

@@ -8,7 +8,7 @@
   "hideControls": false,
   "links": [],
   "refresh": false,
-  "revision": 8,
+  "revision": 9,
   "rows": [
     {
       "collapse": false,
@@ -17,7 +17,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -90,7 +90,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -163,7 +163,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -248,7 +248,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -344,7 +344,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -451,7 +451,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -524,7 +524,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -620,7 +620,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -738,7 +738,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -857,7 +857,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "decimals": 3,
           "fill": 1,
           "id": 20,
@@ -941,7 +941,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "decimals": 3,
           "fill": 1,
           "id": 16,
@@ -1031,7 +1031,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "decimals": 3,
           "fill": 1,
           "id": 17,
@@ -1169,7 +1169,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "decimals": 3,
           "fill": 1,
           "id": 18,
@@ -1260,7 +1260,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "Grafana TestData",
+          "datasource": "-- Test Data --",
           "decimals": 3,
           "fill": 1,
           "id": 19,

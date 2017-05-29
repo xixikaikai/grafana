@@ -1,4 +1,4 @@
-///<reference path="../../../../headers/common.d.ts" />
+///<reference path="../../../headers/common.d.ts" />
 
 import _ from 'lodash';
 
@@ -6,7 +6,7 @@ import {TestDataDatasource} from './datasource';
 import {QueryCtrl} from 'app/plugins/sdk';
 
 export class TestDataQueryCtrl extends QueryCtrl {
-  static templateUrl = 'partials/query.editor.html';
+  static templateUrl = 'query.editor.html';
 
   scenarioList: any;
   scenario: any;

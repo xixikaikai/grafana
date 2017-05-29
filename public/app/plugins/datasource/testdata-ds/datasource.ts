@@ -1,14 +1,14 @@
-///<reference path="../../../../headers/common.d.ts" />
+///<reference path="../../../headers/common.d.ts" />
 
 import _ from 'lodash';
 import angular from 'angular';
 
 class TestDataDatasource {
-  id: any;
+  typeId: string;
 
   /** @ngInject */
   constructor(instanceSettings, private backendSrv, private $q) {
-    this.id = instanceSettings.id;
+    this.typeId = instanceSettings.meta.id;
   }
 
   query(options) {
@@ -22,7 +22,7 @@ class TestDataDatasource {
         maxDataPoints: options.maxDataPoints,
         stringInput: item.stringInput,
         jsonInput: angular.fromJson(item.jsonInput),
-        datasourceId: this.id,
+        builtInType: this.typeId,
       };
     });
 
@@ -53,12 +53,7 @@ class TestDataDatasource {
   }
 
   annotationQuery(options) {
-    return this.backendSrv.get('/api/annotations', {
-      from: options.range.from.valueOf(),
-      to: options.range.to.valueOf(),
-      limit: options.limit,
-      type: options.type,
-    });
+    return this.$q.when({data: []});
   }
 
 }

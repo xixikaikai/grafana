@@ -1,11 +1,11 @@
 {
   "type": "datasource",
-  "name": "Grafana TestDataDB",
-  "id": "grafana-testdata-datasource",
+  "name": "-- Test Data --",
+  "id": "testdata-ds",
 
   "metrics": true,
   "alerting": true,
-  "annotations": true,
+  "builtIn": true,
 
   "info": {
     "author": {

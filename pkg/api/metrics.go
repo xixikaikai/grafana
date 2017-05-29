@@ -3,6 +3,7 @@ package api
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"net/http"
 
 	"github.com/grafana/grafana/pkg/api/dtos"
@@ -23,14 +24,9 @@ func QueryMetrics(c *middleware.Context, reqDto dtos.MetricRequest) Response {
 		return ApiError(400, "No queries found in query", nil)
 	}
 
-	dsId, err := reqDto.Queries[0].Get("datasourceId").Int64()
+	dsInfo, err := getQueryDatasource(c, &reqDto)
 	if err != nil {
-		return ApiError(400, "Query missing datasourceId", nil)
-	}
-
-	dsQuery := models.GetDataSourceByIdQuery{Id: dsId}
-	if err := bus.Dispatch(&dsQuery); err != nil {
-		return ApiError(500, "failed to fetch data source", err)
+		return ApiError(500, "Failed to get query data source", err)
 	}
 
 	request := &tsdb.Request{TimeRange: timeRange}
@@ -41,7 +37,7 @@ func QueryMetrics(c *middleware.Context, reqDto dtos.MetricRequest) Response {
 			MaxDataPoints: query.Get("maxDataPoints").MustInt64(100),
 			IntervalMs:    query.Get("intervalMs").MustInt64(1000),
 			Model:         query,
-			DataSource:    dsQuery.Result,
+			DataSource:    dsInfo,
 		})
 	}
 
@@ -60,6 +56,26 @@ func QueryMetrics(c *middleware.Context, reqDto dtos.MetricRequest) Response {
 	}
 
 	return Json(statusCode, &resp)
+}
+
+func getQueryDatasource(c *middleware.Context, reqDto *dtos.MetricRequest) (*models.DataSource, error) {
+	// special handling for built in data sources that do not have a data source instance
+	builtInType, err := reqDto.Queries[0].Get("builtInType").String()
+	if err == nil {
+		return &models.DataSource{Type: builtInType}, nil
+	}
+
+	dsId, err := reqDto.Queries[0].Get("datasourceId").Int64()
+	if err != nil {
+		return nil, errors.New("Query missing datasourceId")
+	}
+
+	dsQuery := models.GetDataSourceByIdQuery{Id: dsId, OrgId: c.OrgId}
+	if err := bus.Dispatch(&dsQuery); err != nil {
+		return nil, err
+	}
+
+	return dsQuery.Result, nil
 }
 
 // GET /api/tsdb/testdata/scenarios
