@@ -26,7 +26,7 @@ class ScrollBugPanelCtrl extends PanelCtrl {
     const options = {
       "url": "api/search",
       "method": "GET",
-      "requestId": "8A",
+      "requestId": "",
       "retry": 0,
       "timeout": {
         "$$state": {
@@ -39,19 +39,23 @@ class ScrollBugPanelCtrl extends PanelCtrl {
     };
 
     this.startTime = moment();
+    options.requestId = Math.random().toString();
     this.backendSrv.datasourceRequest(options).then((data) => {
       this.httpGet1 += '<p>Http Get Call1 completed: ' + moment().diff(this.startTime).toString() + '</p>';
     });
+    options.requestId = Math.random().toString();
     this.backendSrv.datasourceRequest(options).then(() => {
       this.httpGet2 += '<p>Http Get Call2 completed: ' + moment().diff(this.startTime).toString() + '</p>';
     });
-
+    options.requestId = Math.random().toString();
     this.backendSrv.datasourceRequest(options).then(() => {
       this.httpGet3 += '<p>Http Get Call3 completed: ' + moment().diff(this.startTime).toString() + '</p>';
     });
 
     this.renderingCompleted();
   }
+
+
 }
 
 export {ScrollBugPanelCtrl as PanelCtrl};
