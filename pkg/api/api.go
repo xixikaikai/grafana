@@ -1,6 +1,7 @@
 package api
 
 import (
+	"github.com/casbin/casbin"
 	"github.com/go-macaron/binding"
 	"github.com/grafana/grafana/pkg/api/avatar"
 	"github.com/grafana/grafana/pkg/api/dtos"
@@ -17,6 +18,9 @@ func (hs *HttpServer) registerRoutes() {
 	reqOrgAdmin := middleware.RoleAuth(m.ROLE_ADMIN)
 	quota := middleware.Quota
 	bind := binding.Bind
+
+	e := casbin.NewEnforcer("conf/policy/authz_model.conf", "conf/policy/authz_policy.csv")
+	r.Use(middleware.Authorizer(e))
 
 	// automatically set HEAD for every GET
 	r.SetAutoHead(true)
