@@ -7,6 +7,12 @@
 			"revision": ""
 		},
 		{
+			"checksumSHA1": "ANlbv5ostIMftHM4oha1P+S8ZyY=",
+			"path": "github.com/Knetic/govaluate",
+			"revision": "ed428fc1d628f009bd7fbf100ff72feba3527753",
+			"revisionTime": "2017-05-26T16:29:15Z"
+		},
+		{
 			"checksumSHA1": "7HXb3cry6luicWeJM9Uxwzfo9Rs=",
 			"path": "github.com/Unknwon/com",
 			"revision": "0db4a625e949e956314d7d1adea9bf82384cc10c",
@@ -357,6 +363,42 @@
 			"versionExact": "v1.8.11"
 		},
 		{
+			"checksumSHA1": "pMS2XdAKoFdXMy0fN3kqW4Bx5Is=",
+			"path": "github.com/casbin/casbin",
+			"revision": "7e5939556e7a6c9435fc67fb2a4e7337d74cfd1e",
+			"revisionTime": "2017-06-13T13:57:38Z"
+		},
+		{
+			"checksumSHA1": "GnxB5zt8weCqfnLMR4POr1xJpIE=",
+			"path": "github.com/casbin/casbin/config",
+			"revision": "7e5939556e7a6c9435fc67fb2a4e7337d74cfd1e",
+			"revisionTime": "2017-06-13T13:57:38Z"
+		},
+		{
+			"checksumSHA1": "EbAPRDiyxVE9NsfKvkzu6SKPioM=",
+			"path": "github.com/casbin/casbin/model",
+			"revision": "7e5939556e7a6c9435fc67fb2a4e7337d74cfd1e",
+			"revisionTime": "2017-06-13T13:57:38Z"
+		},
+		{
+			"checksumSHA1": "w7hLX+q9hNtWGGWRyFbS8I7Xrjc=",
+			"path": "github.com/casbin/casbin/persist",
+			"revision": "7e5939556e7a6c9435fc67fb2a4e7337d74cfd1e",
+			"revisionTime": "2017-06-13T13:57:38Z"
+		},
+		{
+			"checksumSHA1": "eMdSquOosOoc4VwVr+GVFhu4Sbw=",
+			"path": "github.com/casbin/casbin/rbac",
+			"revision": "7e5939556e7a6c9435fc67fb2a4e7337d74cfd1e",
+			"revisionTime": "2017-06-13T13:57:38Z"
+		},
+		{
+			"checksumSHA1": "j+iuVNMEuqxaPrdki42535ivsOU=",
+			"path": "github.com/casbin/casbin/util",
+			"revision": "7e5939556e7a6c9435fc67fb2a4e7337d74cfd1e",
+			"revisionTime": "2017-06-13T13:57:38Z"
+		},
+		{
 			"checksumSHA1": "cVyhKIRI2gQrgpn5qrBeAqErmWM=",
 			"path": "github.com/go-ini/ini",
 			"revision": "6e4869b434bd001f6983749881c7ead3545887d8",
@@ -501,12 +543,6 @@
 			"revisionTime": "2016-08-23T18:01:44Z"
 		},
 		{
-			"checksumSHA1": "1MGpGDQqnUoRpv7VEcQrXOBydXE=",
-			"path": "golang.org/x/crypto/pbkdf2",
-			"revision": "3543873453996aaab2fc6b3928a35fc5ca2b5afb",
-			"revisionTime": "2017-04-18T16:44:36Z"
-		},
-		{
 			"checksumSHA1": "r7o16T0WQ/XSe2mlQuioMi8gxbw=",
 			"path": "github.com/yudai/gojsondiff",
 			"revision": "9209d1532c51cabe0439993586a71c207b09a0ac",
@@ -523,6 +559,12 @@
 			"path": "github.com/yudai/golcs",
 			"revision": "d1c525dea8ce39ea9a783d33cf08932305373f2c",
 			"revisionTime": "2015-04-05T16:34:35Z"
+		},
+		{
+			"checksumSHA1": "1MGpGDQqnUoRpv7VEcQrXOBydXE=",
+			"path": "golang.org/x/crypto/pbkdf2",
+			"revision": "3543873453996aaab2fc6b3928a35fc5ca2b5afb",
+			"revisionTime": "2017-04-18T16:44:36Z"
 		},
 		{
 			"checksumSHA1": "WHc3uByvGaMcnSoI21fhzYgbOgg=",
