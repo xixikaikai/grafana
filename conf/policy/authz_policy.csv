@@ -1,0 +1,68 @@
+# rules for Grafana admin.
+p, is_not, grafana_admin, /admin*, *, deny
+p, is_not, grafana_admin, /users*, *, deny
+
+p, is, org_viewer, /api/orgs, POST, allow
+p, is_not, grafana_admin, /api/orgs*, *, deny
+
+p, is_not, grafana_admin, /api/tsdb/testdata/gensql, GET, deny
+p, is_not, grafana_admin, /api/users*, *, deny
+p, is_not, grafana_admin, /api/admin*, *, deny
+
+
+# rules for organization editor.
+p, is_not, org_editor, /api/snapshots-delete/:key, GET, deny
+p, is_not, org_editor, /api/dashboards/id/:dashboardId/restore, POST, deny
+p, is_not, org_editor, /api/dashboards/db, POST, deny
+
+p, is, org_viewer, /api/playlists/*, GET, allow
+p, is_not, org_editor, /api/playlists/*, *, deny
+
+p, is_not, org_editor, /api/alerts/:alertId/pause, POST, deny
+
+p, is, org_viewer, /api/alert-notifications, GET, allow
+p, is_not, org_editor, /api/alert-notifications/*, *, deny
+
+p, is_not, org_editor, /api/annotations/, POST, deny
+
+
+# rules for organization admin.
+p, is, org_viewer, /api/org/, GET, allow
+p, is, org_viewer, /api/org/quotas, GET, allow
+p, is_not, org_admin, /api/org/*, *, deny
+
+p, is_not, org_admin, /api/auth/keys/*, *, deny
+
+p, is, org_viewer, /api/datasources/id/:name, GET, allow
+p, is, org_viewer, /api/datasources/proxy/*, *, allow
+p, is_not, org_admin, /api/datasources/*, *, deny
+
+p, is_not, org_admin, /api/plugins/:pluginId/dashboards/, GET, deny
+p, is_not, org_admin, /api/plugins/:pluginId/settings, POST, deny
+
+
+# rules for anonymous user.
+p, is, guest, /login*, *, allow
+p, is, guest, /logout*, *, allow
+p, is, guest, /invite/*, *, allow
+p, is, guest, /signup, *, allow
+p, is, guest, /user/password/*, *, allow
+p, is, guest, /dashboard/snapshot/*, GET, allow
+p, is, guest, /api/login/ping, *, allow
+p, is, guest, /api/user/signup*, *, allow
+p, is, guest, /api/user/invite*, *, allow
+p, is, guest, /api/user/password/*, *, allow
+p, is, guest, /api/snapshot*, *, allow
+p, is, guest, /avatar/*, *, allow
+p, is, guest, /ws, *, allow
+
+
+# rules for organization viewer.
+p, is, org_viewer, /*, *, allow
+
+
+# RBAC role inheritance relationship.
+g, grafana_admin, org_admin
+g, org_admin, org_editor
+g, org_editor, org_viewer
+g, org_viewer, guest
