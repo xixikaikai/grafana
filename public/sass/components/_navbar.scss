@@ -62,6 +62,7 @@
   margin: 0;
   background-color: $side-menu-bg;
   padding: 0.4rem 1.0rem 0.4rem 1rem;
+  border-right: 1px solid $tight-form-border;
   min-height: $navbarHeight;
 
   .fa-caret-down {
@@ -103,9 +104,6 @@
 
 .navbar-page-btn-wrapper {
   float: left;
-  &:hover {
-    background: $navbarButtonBackgroundHighlight;
-  }
 }
 
 .navbar-page-btn {
@@ -113,7 +111,9 @@
   overflow: hidden;
   white-space: nowrap;
   display: block;
+  float: left;
   margin: 0;
+  border-right: 1px solid $tight-form-border;
   color: darken($link-color, 5%);
   font-size: $font-size-lg;
   padding: 1rem 1rem 0.75rem 1rem;
@@ -139,6 +139,10 @@
 
   &--search {
     padding: 1rem 1.5rem 0.75rem 1.5rem;
+  }
+
+  &:hover {
+    background: $navbarButtonBackgroundHighlight;
   }
 }
 

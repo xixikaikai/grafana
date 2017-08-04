@@ -1,11 +1,5 @@
 <ul class="sidemenu">
 
-	<li>
-		<a class="sidemenu-item" ng-click="ctrl.search()">
-			<span class="icon-circle sidemenu-icon"><i class="fa fa-fw fa-search"></i></span>
-		</a>
-	</li>
-
 	<li ng-repeat="item in ::ctrl.mainLinks" class="dropdown">
 		<a href="{{::item.url}}" class="sidemenu-item" target="{{::item.target}}">
 			<span class="icon-circle sidemenu-icon">

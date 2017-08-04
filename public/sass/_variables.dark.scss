@@ -213,7 +213,7 @@ $wellBackground:                  #131517;
 
 $navbarHeight:                    52px;
 $navbarBackgroundHighlight:       $dark-3;
-$navbarBackground:                $panel-bg;
+$navbarBackground:                $dark-3;
 $navbarBorder:                    1px solid $body-bg;
 
 $navbarText:                      $gray-4;
@@ -225,8 +225,8 @@ $navbarLinkBackgroundActive:      $navbarBackground;
 $navbarBrandColor:                $link-color;
 $navbarDropdownShadow:            inset 0px 4px 10px -4px $body-bg;
 
-$navbarButtonBackground:          $navbarBackground;
-$navbarButtonBackgroundHighlight: $body-bg;
+$navbarButtonBackground:          lighten($navbarBackground, 3%);
+$navbarButtonBackgroundHighlight: lighten($navbarBackground, 5%);
 
 // Sidemenu
 // -------------------------

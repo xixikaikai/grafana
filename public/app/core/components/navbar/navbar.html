@@ -5,6 +5,10 @@
 		</span>
 	</a>
 
+  <a class="navbar-page-btn navbar-page-btn--search" ng-click="ctrl.showSearch()">
+    <i class="fa fa-search"></i>
+ 	</a>
+
 	<div ng-if="::!ctrl.hasMenu">
 		<a href="{{::ctrl.section.url}}" class="navbar-page-btn">
       <i class="{{::ctrl.section.icon}}" ng-show="::ctrl.section.icon"></i>
