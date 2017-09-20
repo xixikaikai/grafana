@@ -62,13 +62,12 @@ func (g *GrafanaServerImpl) Start() {
 	social.NewOAuthService()
 	eventpublisher.Init()
 	plugins.Init()
-	client, err := tsdbplugins.Init()
-	defer client.Kill()
-
+	pluginClient, err := tsdbplugins.Init()
 	if err != nil {
 		g.log.Error("failed to start plugins", "error", err)
 		g.Shutdown(1, "Startup failed")
 	}
+	defer pluginClient.Kill()
 
 	closer, err := tracing.Init(setting.Cfg)
 	if err != nil {
