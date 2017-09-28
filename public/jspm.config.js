@@ -3,7 +3,6 @@ SystemJS.config({
   defaultExtenion: 'js',
   baseURL: 'public',
   paths: {
-    'ngreact': 'vendor/npm/ngreact/ngReact.js',
     'mousetrap': 'vendor/npm/mousetrap/mousetrap.js',
     'remarkable': 'vendor/npm/remarkable/dist/remarkable.js',
     'tether': 'vendor/npm/tether/dist/js/tether.js',
@@ -11,8 +10,6 @@ SystemJS.config({
     'tether-drop': 'vendor/npm/tether-drop/dist/js/drop.js',
     'moment': 'vendor/moment.js',
     'jquery': 'vendor/npm/jquery/dist/jquery.js',
-    'lodash-src': 'vendor/npm/lodash/lodash.js',
-    'lodash': 'app/core/lodash_extended.js',
     'angular': 'vendor/npm/angular/angular.js',
     'bootstrap': 'vendor/bootstrap/bootstrap.js',
     'angular-route': 'vendor/npm/angular-route/angular-route.js',
@@ -35,15 +32,12 @@ SystemJS.config({
     'd3': 'vendor/d3/d3.js',
     'jquery.flot.dashes': 'vendor/flot/jquery.flot.dashes',
     'ace': 'vendor/npm/ace-builds/src-noconflict/ace',
-    'clipboard': 'vendor/npm/clipboard/dist/clipboard.js',
-    "npm:": "jspm_packages/npm/",
-    "app/": "app/"
+    'clipboard': 'vendor/npm/clipboard/dist/clipboard.js'
   },
   packages: {
     'app': {
       'defaultExtension': 'js',
-      'main': 'boot.js',
-      'format': 'system'
+      'main': 'boot.js'
     },
     'vendor': {
       'defaultExtension': 'js'
@@ -103,6 +97,8 @@ SystemJS.config({
     'npm:*.json'
   ],
   map: {
+    'angular': 'npm:angular@1.6.6',
+    'ngreact': 'npm:ngreact@0.4.1',
     'lodash': 'npm:lodash@4.17.4',
     'assert': 'npm:jspm-nodelibs-assert@0.2.1',
     'buffer': 'npm:jspm-nodelibs-buffer@0.2.3',

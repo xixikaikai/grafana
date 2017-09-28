@@ -2,7 +2,6 @@
 
 import 'bootstrap';
 import 'vendor/filesaver';
-import 'lodash-src';
 import 'angular-strap';
 import 'angular-route';
 import 'angular-sanitize';
