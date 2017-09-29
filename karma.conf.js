@@ -10,6 +10,8 @@ module.exports = function(config) {
     files: [
       'vendor/npm/es6-shim/es6-shim.js',
       'vendor/npm/systemjs/dist/system.src.js',
+      'jspm.config.js',
+      'jspm.test.js',
       'test/test-main.js',
 
       {pattern: '**/*.js', included: false},
